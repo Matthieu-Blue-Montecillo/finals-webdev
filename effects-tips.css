@@ -37,7 +37,7 @@ header > h1:hover {
 .intro {
     text-align: center;
     padding: 2rem 0;
-    background-color: black;
+    background-color: #353a36;
 }
 
 .intro h1 {
@@ -47,9 +47,9 @@ header > h1:hover {
 }
 
 .impacts {
-    background-color: #1b5c54;
+    background-color: #353a36;
     padding: 2rem;
-    font-family: "League Spartan", sans-serif;
+	font-family: "League Spartan", sans-serif;
 }
 
 .impacts h2 {
@@ -59,29 +59,61 @@ header > h1:hover {
 
 .impact-items {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Or any other preferred alignment */
     flex-wrap: wrap;
     color: white;
 }
 
-.impact-item {
+[class^="impact-item"] {
+    flex: 1;
     text-align: center;
-    margin: 1rem;
+    margin: 0;
+    padding: 1rem;
 }
 
-.impact-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+[class^="impact-item"] img {
+    width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 0 auto;
 }
 
-.impact-item p {
-    margin-top: 0.5rem;
+.impact-item_1 {
+    background-color: #1F604A;
+    padding-top: 2.9rem; 
+	padding-left: 7%;
+	padding-right: 7%;
+}
+
+.impact-item_1 img{
+	height: 65%;
+}
+
+.impact-item_3 img{
+	height: 65%;
+}
+
+.impact-item_2 {
+    background-color: #2F7E64;
+	padding-top: 3rem;
+	padding-left: 7%;
+	padding-right: 7%;
+}
+
+.impact-item_3 {
+    background-color: #94BBA8;
+	padding-top: 3rem;
+	padding-left: 7%;
+	padding-right: 7%;
+}
+
+[class^="impact-item"] p {
+    margin-bottom: 0.5rem;
 }
 
 .tips {
-    padding: 2rem;
-    background-color: black;
+    padding: 5rem;
+    background-color: #353a36;
     color: white;
     font-family: "League Spartan", sans-serif;
 	font-optical-sizing: auto;
@@ -93,22 +125,31 @@ header > h1:hover {
     margin-bottom: 1rem;
 }
 
-.tips ul {
+.tips ol {
     list-style: none;
-    padding-left: 1rem;
+    /* counter-reset: item; */
 }
 
-.tips li {
+.tips ol li {
+    counter-increment: item;
     margin-bottom: 1rem;
-    display: flex;
-    align-items: flex-start;
+	text-indent: -35px;
 }
 
 .tips li::before {
-    content: '✓';
-    color: #3db28c;
+    content: counter(item);
+    color: #000000;
+	background-color: #3db28c;
     margin-right: 0.5rem;
     font-size: 1.2rem;
+    width: 25px; 
+    height: 25px; 
+    border: 2px solid #3db28c;
+    border-radius: 50%;
+    line-height: 30px; 
+    text-align: center; 
+	text-indent: -2px;
+    display: inline-block; 
 }
 
 .more {
